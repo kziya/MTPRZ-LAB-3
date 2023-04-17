@@ -3,6 +3,9 @@ import { MongooseModuleOptions } from '@nestjs/mongoose';
 
 export const mongooseConfigFactory = (
   configService: ConfigService,
-): MongooseModuleOptions => ({
-  uri: configService.get('DB_URL'),
-});
+): MongooseModuleOptions => (
+  console.log(configService.get('DB_URL')),
+  {
+    uri: configService.get('DB_URL'),
+  }
+);
